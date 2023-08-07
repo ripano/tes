@@ -1,0 +1,52 @@
+title: "Toshimaru's Blog"
+url: "https://blog.toshima.ru"
+description: >
+  Where there's a will, there's a way.
+plugins:
+  - jekyll-archives
+  - jekyll-feed
+  - jekyll-include_sass
+  - jekyll-redirect-from
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - kramdown-amp
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - Rakefile
+  - README.md
+  - vendor
+# GitHub Flavored Markdown
+kramdown:
+  input: GFM
+sass:
+  style: compressed
+feed:
+  tags: true
+# jekyll-seo
+twitter:
+  username: toshimaru_e
+  card: summary
+author:
+  name: toshimaru
+  twitter: toshimaru_e
+jekyll-archives:
+  enabled: [year, month, tags]
+jekyll_compose:
+  default_front_matter:
+    posts:
+      tags: tag
+
+# Scopes
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      image: /android-chrome-512x512.png
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"

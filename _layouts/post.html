@@ -1,0 +1,52 @@
+---
+layout: default
+---
+<header class="masthead">
+  <h1 class="masthead-title--small"><a href="/">{{ site.title }}</a></h1>
+</header>
+<article class="content post">
+  <h1 class="post-title">{{ page.title }}</h1>
+  <div class="post-meta">
+    <div class="post-date">
+      <time>{{ page.date | date_to_string }}</time>
+      {% if page.last_modified_at %}(Updated on {{ page.last_modified_at | date_to_string }}){% endif %}
+    </div>
+    <div class="post-tags">
+      <ul class="tags">
+        {% for tag in page.tags %}
+          <li><a href="/tag/{{ tag }}" class="tag">{{ tag }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+
+  <div class="post-body">
+    {{ content }}
+  </div>
+
+  <div class="social-share">
+    <amp-social-share type="twitter"></amp-social-share>
+    <amp-social-share type="facebook"></amp-social-share>
+  </div>
+
+  <div class="post-ad">
+    <amp-ad width="100vw" height=320 type="adsense" data-ad-client="ca-pub-8616720383995770" data-ad-slot="4570107466" data-auto-format="rspv"
+      data-full-width>
+      <div overflow></div>
+    </amp-ad>
+  </div>
+
+  <amp-iframe width=600 height=140
+            layout="responsive"
+            sandbox="allow-scripts allow-same-origin allow-modals allow-popups allow-forms"
+            resizable
+            src="https://disqus.toshima.ru/blog-toshima-ru.html?id={{ page.id | uri_escape }}&url=https://blog.toshima.ru{{ page.url | uri_escape }}&title={{ page.title | uri_escape }}">
+    <div overflow
+         tabindex=0
+         role=button
+         aria-label="Load more"
+         style="display:block;font-size:12px;font-weight:500;font-family:Helvetica Neue, arial, sans-serif;text-align:center;line-height:1.1;padding:12px 16px;border-radius:4px;background:rgba(29,47,58,0.6);color:rgb(255,255,255)">
+        Load more
+    </div>
+  </amp-iframe>
+</article>
